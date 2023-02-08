@@ -43,16 +43,19 @@ const SideBarContainer = styled.aside`
 const FirstButtonGroup = styled.div`
   width: 100%;
   margin-bottom: 1.5rem;
+  background-color: white;
 `
 
 const SecondButtonGroup = styled.div`
   width: 100%;
   margin-bottom: 1.5rem;
+  background-color: white;
 `
 
 const Subscriptions = styled.div`
   margin-top: 2rem;
   width: 100%;
+  background-color: white;
 `
 
 const SubscriptionTitle = styled.h2`
@@ -67,16 +70,18 @@ const SubscriptionTitle = styled.h2`
   text-transform: uppercase;
   align-items: center;
   color: #606060;
+  background-color: white;
 `
 
 const MoreFromYoutube = styled.div`
   margin-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
+  background-color: white;
 `
 
 export function SideBar() {
-  const { toggleMenu, setToggleMenu } = useContext(MenuContext)
+  const { toggleMenu } = useContext(MenuContext)
 
   return (
     <SideBarContainer toggleMenu={toggleMenu}>
