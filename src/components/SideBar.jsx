@@ -38,7 +38,7 @@ const SideBarContainer = styled.aside`
   left: ${props => props.toggleMenu === false ? '-15rem' : '0rem'};
 
   @media (max-width: 768px) {
-    top: 2.8rem;
+    top: 3rem;
   }
 
 
