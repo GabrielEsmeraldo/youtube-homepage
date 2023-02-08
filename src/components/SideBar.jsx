@@ -28,7 +28,7 @@ import MenuContext from "../context/MenuContext";
 
 const SideBarContainer = styled.aside`
   width: 15rem;
-  height: calc(100% - 3.5rem);
+  height: calc(100% - 3.3rem);
   background-color: white;
   overflow-y: scroll;
   position: fixed;
@@ -38,7 +38,7 @@ const SideBarContainer = styled.aside`
   left: ${props => props.toggleMenu === false ? '-15rem' : '0rem'};
 
   @media (max-width: 768px) {
-    top: 3rem;
+    top: 2.8rem;
   }
 
 
