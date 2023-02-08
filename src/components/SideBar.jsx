@@ -28,20 +28,14 @@ import MenuContext from "../context/MenuContext";
 
 const SideBarContainer = styled.aside`
   width: 15rem;
-  height: calc(100% - 3.3rem);
+  height: 100%;
   background-color: white;
   overflow-y: scroll;
   position: fixed;
-  top: 3.3rem;
   transition: 0.3s;
   z-index: 99;
   left: ${props => props.toggleMenu === false ? '-15rem' : '0rem'};
-
-  @media (max-width: 768px) {
-    top: 3rem;
-  }
-
-
+  padding-top: 4rem;
 `
 
 const FirstButtonGroup = styled.div`
@@ -82,6 +76,7 @@ const MoreFromYoutube = styled.div`
   padding-bottom: 2rem;
   width: 100%;
   background-color: white;
+  padding-bottom: 1rem;
 `
 
 export function SideBar() {
