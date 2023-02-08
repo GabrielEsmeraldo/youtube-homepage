@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
- <img src="/assets/youtube-homepage.png" alt="" />
+ <img src="/src/assets/youtube-homepage.png" alt="" />
 </p>
 
 ## 💻 Sobre
