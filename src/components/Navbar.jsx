@@ -6,7 +6,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import AppsIcon from '@mui/icons-material/Apps';
 import YoutubeLogo from '../assets/youtube-logo.svg'
 import ProfilePhoto from '../assets/profilePhoto.jpg'
-import { createContext, useState } from 'react';
+import { useContext } from 'react';
+import MenuContext from '../context/MenuContext';
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -40,6 +41,10 @@ const RightSideContainer = styled.div`
       color: #606060;
       cursor: pointer;
     }
+
+    @media (max-width: 768px){
+      display: none;
+    }
   }
 `
 
@@ -47,6 +52,10 @@ const SearchContainer = styled.div`
   width: 35.81rem;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px){
+    display: none;
+  }
 
 `
 const SearchInput = styled.input`
@@ -102,15 +111,26 @@ const ProfilePhotoContainer = styled.button`
 
   img {
     border-radius: 999px;
+
+    @media (max-width: 768px){
+      width: 25px;
+    }
   }
+
+
 `
 
 export default function Navbar() {
+  const { toggleMenu, setToggleMenu } = useContext(MenuContext)
+
+  function handleClickMenu() {
+    setToggleMenu(!toggleMenu)
+  }
 
   return (
-    <NavbarContainer>
+    <NavbarContainer toggleMenu={toggleMenu}>
       <LeftSideContainer>
-        <MenuButton><MenuOutlinedIcon /></MenuButton>
+        <MenuButton onClick={handleClickMenu}><MenuOutlinedIcon /></MenuButton>
         <img src={YoutubeLogo} alt="" />
       </LeftSideContainer>
 

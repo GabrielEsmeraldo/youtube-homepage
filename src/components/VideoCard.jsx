@@ -50,14 +50,14 @@ const VideoInfo = styled.div`
   }
 `
 
-export function VideoCard({ thumbnail, videoTitle, duration, channelName, videoViews, yearsAgo }) {
+export function VideoCard({ thumbnail, videoTitle, duration, channelName, videoViews, yearsAgo, channelIcon }) {
   return (
     <VideoCardContainer>
       <img src={thumbnail} alt="" />
       <VideoTimer>{duration}</VideoTimer>
 
       <MoreInfoContainer>
-        <img src="/avatar.png" alt="" />
+        <img src={channelIcon} alt="" />
 
         <VideoInfo>
           <h3>{videoTitle}</h3>

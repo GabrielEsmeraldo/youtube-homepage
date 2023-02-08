@@ -1,9 +1,16 @@
-import Home from "./pages/Home"
+import { useState } from "react"
+import Router from "./components/Router"
+import MenuContext from "./context/MenuContext"
 
 function App() {
+  const [toggleMenu, setToggleMenu] = useState(true)
 
   return (
-    <Home />
+    <MenuContext.Provider value={{ toggleMenu, setToggleMenu }}>
+      <Router />
+    </MenuContext.Provider>
+
+
   )
 }
 

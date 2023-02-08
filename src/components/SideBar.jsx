@@ -23,7 +23,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import FlagIcon from '@mui/icons-material/Flag';
 import HelpIcon from '@mui/icons-material/Help';
 import FeedbackIcon from '@mui/icons-material/Feedback';
-import { useState } from "react";
+import { useContext } from "react";
+import MenuContext from "../context/MenuContext";
 
 const SideBarContainer = styled.aside`
   width: 15rem;
@@ -32,6 +33,11 @@ const SideBarContainer = styled.aside`
   overflow-y: scroll;
   position: fixed;
   top: 3.5rem;
+  transition: 0.3s;
+  z-index: 99;
+  left: ${props => props.toggleMenu === false ? '-15rem' : '0rem'};
+
+
 `
 
 const FirstButtonGroup = styled.div`
@@ -70,9 +76,10 @@ const MoreFromYoutube = styled.div`
 `
 
 export function SideBar() {
+  const { toggleMenu, setToggleMenu } = useContext(MenuContext)
 
   return (
-    <SideBarContainer>
+    <SideBarContainer toggleMenu={toggleMenu}>
       <FirstButtonGroup>
         <ul>
           <li><SideBarButton icon={<HomeIcon />}>Home</SideBarButton></li>

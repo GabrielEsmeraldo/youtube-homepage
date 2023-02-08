@@ -1,23 +1,35 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import MenuContext from "../context/MenuContext";
 import { VideoCard } from "./VideoCard";
 
 const VideoContainer = styled.div`
   display: flex;
   justify-content: center;
   flex: 1;
+  flex-wrap: wrap;
   padding-top: 6rem;
-  padding-left: 12rem;
+  transition: 0.3s;
+
+  @media (min-width: 768px) {
+    padding-left: ${props => props.toggleMenu === true ? '15rem' : '0rem'};
+  }
+  
 `
 const VideoContent = styled.div`
   display: flex;
-  width: 72rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 72rem;
   gap: 1rem;
   flex-wrap: wrap;
 `
 
 export function Content() {
+  const { toggleMenu } = useContext(MenuContext)
+
   return (
-    <VideoContainer>
+    <VideoContainer toggleMenu={toggleMenu}>
       <VideoContent>
 
         <VideoCard
@@ -26,7 +38,8 @@ export function Content() {
           videoTitle='Zack Hemsey - "The Way"'
           channelName='Zack Hemsey'
           videoViews='64M'
-          yearsAgo='9 years'
+          yearsAgo='9 years ago'
+          channelIcon='/avatar.png'
         />
 
         <VideoCard
@@ -36,6 +49,8 @@ export function Content() {
           channelName="Figma"
           videoViews='1M'
           yearsAgo='6 years ago'
+          channelIcon='/avatar4.png'
+
         />
 
         <VideoCard
@@ -45,6 +60,7 @@ export function Content() {
           channelName="Jacob's Piano"
           videoViews='63M'
           yearsAgo='4 years ago'
+          channelIcon='/avatar2.png'
         />
 
         <VideoCard
@@ -54,6 +70,7 @@ export function Content() {
           channelName="Figma"
           videoViews='27K'
           yearsAgo='1 months ago'
+          channelIcon='/avatar4.png'
         />
 
         <VideoCard
@@ -63,6 +80,7 @@ export function Content() {
           channelName="Movieclips Trailers"
           videoViews='10M'
           yearsAgo='3 years ago'
+          channelIcon='/avatar1.png'
         />
 
         <VideoCard
@@ -72,6 +90,7 @@ export function Content() {
           channelName='Figma'
           videoViews='16K'
           yearsAgo='2 Months ago'
+          channelIcon='/avatar4.png'
         />
 
         <VideoCard
@@ -80,7 +99,8 @@ export function Content() {
           videoTitle='Zack Hemsey - "The Way"'
           channelName='Zack Hemsey'
           videoViews='64M'
-          yearsAgo='9 years'
+          yearsAgo='9 years ago'
+          channelIcon='/avatar.png'
         />
 
         <VideoCard
@@ -89,7 +109,8 @@ export function Content() {
           videoTitle='Who Am I - No System Is Safe Official Trailer #1 (2014) - Tom... '
           channelName='Movieclips Trailers'
           videoViews='64M'
-          yearsAgo='6 years'
+          yearsAgo='6 years ago'
+          channelIcon='/avatar1.png'
         />
 
         <VideoCard
@@ -99,6 +120,7 @@ export function Content() {
           channelName="Jacob's Piano"
           videoViews='11M'
           yearsAgo='5 years ago'
+          channelIcon='/avatar2.png'
         />
 
         <VideoCard
@@ -108,6 +130,7 @@ export function Content() {
           channelName="Figma"
           videoViews='90K'
           yearsAgo='1 months ago'
+          channelIcon='/avatar4.png'
         />
 
         <VideoCard
@@ -117,6 +140,7 @@ export function Content() {
           channelName="Movieclips Trailers"
           videoViews='90K'
           yearsAgo='1 months ago'
+          channelIcon='/avatar1.png'
         />
 
         <VideoCard
@@ -126,6 +150,7 @@ export function Content() {
           channelName="Movieclips Trailers"
           videoViews='35K'
           yearsAgo='8 months ago'
+          channelIcon='/avatar1.png'
         />
 
         <VideoCard
@@ -135,6 +160,7 @@ export function Content() {
           channelName="Jacob's Piano"
           videoViews='25K'
           yearsAgo='12 months ago'
+          channelIcon='/avatar2.png'
         />
 
         <VideoCard
@@ -144,6 +170,7 @@ export function Content() {
           channelName="Figma"
           videoViews='27K'
           yearsAgo='1 months ago'
+          channelIcon='/avatar4.png'
         />
 
         <VideoCard
@@ -153,6 +180,7 @@ export function Content() {
           channelName="Movieclips Trailers"
           videoViews='90K'
           yearsAgo='1 months ago'
+          channelIcon='/avatar1.png'
         />
 
         <VideoCard
@@ -162,6 +190,7 @@ export function Content() {
           channelName='Figma'
           videoViews='16K'
           yearsAgo='2 Months ago'
+          channelIcon='/avatar4.png'
         />
 
       </VideoContent>
