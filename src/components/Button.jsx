@@ -12,7 +12,6 @@ const ButtonContainer = styled.button`
   font-size: 0.88rem;
   line-height: 1rem;
   align-items: center;
-  color: #030303;
   background-color: white;
 
   svg {
