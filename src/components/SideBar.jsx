@@ -32,10 +32,14 @@ const SideBarContainer = styled.aside`
   background-color: white;
   overflow-y: scroll;
   position: fixed;
-  top: 3.5rem;
+  top: 3.3rem;
   transition: 0.3s;
   z-index: 99;
   left: ${props => props.toggleMenu === false ? '-15rem' : '0rem'};
+
+  @media (max-width: 768px) {
+    top: 3rem;
+  }
 
 
 `
